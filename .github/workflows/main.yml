@@ -47,7 +47,7 @@ jobs:
       - name: Sync folders and files to the server
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
-          server: ${{ secrets.FTP_SERVER }} # Make sure this secret is set to your FTP hostname (e.g., ftp.example.com)
+          server: ftp.fujiairecambodia.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
