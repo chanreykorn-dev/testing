@@ -37,6 +37,13 @@ jobs:
       - name: Build Project
         run: npm run build
 
+      - name: Check build directory exists
+        run: |
+          if [ ! -d "build" ]; then
+            echo "❌ Build directory does not exist! Check your build script output."
+            exit 1
+          fi
+
       - name: Sync folders and files to the server
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
