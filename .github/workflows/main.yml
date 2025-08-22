@@ -37,10 +37,10 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Check build directory exists
+      - name: Check dist directory exists
         run: |
-          if [ ! -d "build" ]; then
-            echo "❌ Build directory does not exist! Check your build script output."
+          if [ ! -d "dist" ]; then
+            echo "❌ Dist directory does not exist! Check your build script output."
             exit 1
           fi
 
@@ -50,4 +50,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/
+          local-dir: dist/
